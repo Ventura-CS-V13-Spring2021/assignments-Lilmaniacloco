@@ -44,7 +44,7 @@ using namespace std;
 int main()
 {
     string studentname;
-    int total_stud;
+    int total_stud, total_students_abv;
     int score1, score2;
     double sum, avg;
     ifstream ifs;
@@ -68,9 +68,16 @@ int main()
 
         avg = sum / 2;
         cout << "Avg : " << avg << endl;
-    
+        if(avg >= 80)
+        {
+            total_students_abv++;
+        }
     }
-    for (int i = 0; i < total_stud; i++)
-         ifs >> score1 >> score2 ;
-            if(avg > 80)
-                cout <<  << endl;
+    cout << "total number of students who have an average greater than 80 : " << total_students_abv << "students\n";
+}   
+/* this code was pretty simple no need to debug much. I just couldn't figure
+    out how to get the total of student who got above 80 so I moved on to the next question.
+    after finishing up the others I cames back and started to brainstorm some ideas and 
+    and was dumb founded how simple it was i laughed at myself. I fiugre to keep a tally 
+    on each student that got an 80 or above avg. each time the if stament was true it would a 1 to the tally
+*/
