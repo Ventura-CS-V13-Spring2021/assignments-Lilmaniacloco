@@ -3,12 +3,13 @@
 #include	<ctime>
 #include	<cstdlib>
 using namespace std;
-int getRdnum(void);
+void getRdnum(int);
 int isGreater(int);
 
 int main ()
 {
-    int rdnum;
+    int N = 10;
+    int rdnum, prec;
     ofstream ofs;
 
     ofs.open("NUMBERS.txt");
@@ -17,27 +18,41 @@ int main ()
         cerr << "File Open Error\n";
         exit(0);
     }
-    
-    
-    {
-        int getRdnum ();
-            //if ( isGreater (rdnum))
-            //{
-              //  ofs << rdnum 
-            //}
 
+    { 
+        srand(time(0));
+        for (int i = 0; i < N; i++)
+            getRdnum (rdnum);
+            if (isGreater (rdnum))
+            {
+                cout << "This number " << rdnum << " is greater than peceding " << prec << endl;
+            }
+            
             
     }
 
 }
 
-int getRdnum (int rdnum)
+void getRdnum ( int random)
 {
-    const N = 10;
-    int rdnum;
-    for (int i = 0; i < N ; i++)
-     srand(time(0));
-    rdnum = rand() % 50 + 1;
+    random= rand() % 50 + 1;
+    cout << random << endl;
 
-    return rdnum;
 } 
+
+int isGreater (int rdnum)
+{
+    int prec;
+
+    prec = rdnum;
+          
+    if (prec < rdnum)
+        {
+            cout << "This number " << rdnum << " is greater than peceding " << prec << endl;
+            return 1;
+        }
+        prec = rdnum;
+
+
+    return 0;
+}
