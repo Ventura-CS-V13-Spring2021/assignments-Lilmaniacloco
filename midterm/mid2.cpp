@@ -31,7 +31,7 @@ int main ()
             else
                 cout << N << endl;
         } 
-
+    ofs.close();
 }
 
 int getRdnum ()

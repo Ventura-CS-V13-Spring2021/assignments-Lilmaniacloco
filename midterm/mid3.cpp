@@ -7,12 +7,16 @@ int getRdnum (void);
 int getMax (int , int, int);
 int getMin (int , int, int);
 int differance(int , int);
-
+void fileWrite (ofstream &, int);
 
 
 int main()
 {
     int num1, num2, num3, Max, Min, Diff;
+
+    ofstream ofs;
+
+    ofs.open ("question3.txt");
 
      srand(time(0));
       
@@ -28,7 +32,7 @@ int main()
 
     Min = getMin (num1 , num2, num3);
 
-    cout << Max << " " << Min << endl;
+    cout << "Max: "<< Max << " Min: "<< Min << endl;
 
        Diff = differance (Max, Min);
 
@@ -39,11 +43,12 @@ int main()
         }
     else
     {
-        cout << Diff << endl;
+        fileWrite (ofs, Diff);
+        cout << "The differance between Max and Min: " << Diff << endl;
     }
         
         
-
+    ofs.close();    
 
     
 }
@@ -106,3 +111,13 @@ int differance(int Max , int Min)
     return diff;
 
 }
+
+void fileWrite  (ofstream &ofs, int diff)
+{
+    ofs << diff << endl;
+
+
+}
+
+/* this problem was straight forward for me, there wasn't many problems in getting it to run well. I wrote all the funtions in and the main body, then i got to work on coding the different functions. The trouble i did have was finding the function to work on since in my program there was 5 funtions have to scroll down and pinpointing it, made it a slow process . other then that I just tested the functions each time i finished one and moved on the next one.
+*/
