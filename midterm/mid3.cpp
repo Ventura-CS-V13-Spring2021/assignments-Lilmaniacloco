@@ -12,7 +12,7 @@ int differance(int , int);
 
 int main()
 {
-    int num1, num2, num3, Max, Min;
+    int num1, num2, num3, Max, Min, Diff;
 
      srand(time(0));
       
@@ -29,8 +29,20 @@ int main()
     Min = getMin (num1 , num2, num3);
 
     cout << Max << " " << Min << endl;
-        
 
+       Diff = differance (Max, Min);
+
+    if (Diff < 3)
+        {
+            exit (1);
+        
+        }
+    else
+    {
+        cout << Diff << endl;
+    }
+        
+        
 
 
     
@@ -83,4 +95,14 @@ int getMin (int number1, int number2, int number3)
      }
 
 return 0;
+}
+
+
+int differance(int Max , int Min)
+{
+    int diff;
+    diff = Max - Min;
+
+    return diff;
+
 }
