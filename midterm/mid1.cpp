@@ -9,7 +9,7 @@ int main()
     int score1, score2;
     ofstream ofs;
 
-    ofs.open("student.tx");
+    ofs.open("student.txt");
     if (ofs.fail())
     {
         cerr << "File Op[en Error\n";
