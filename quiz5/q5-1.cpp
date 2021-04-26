@@ -9,17 +9,20 @@ int main()
     int     sum=0;
 
     for(int i=0;i<SIZE;i++)
+    {
         cout << numbers[i] << "\t";
+    }
         cout << endl;
-         for (int j = 0; j <SIZE ; j++)
-        {
-
-           
-             diff[j] = 490 - numbers[i];
-             cout << diff[j] << "\t \n";
-            
-             break;
-        }cout << n[i] << "\t";
+    for (int i = 0; i <SIZE ; i++)
+    {
+        diff[i] = 490 - numbers[i];
+        cout << diff[i] << "\t";
+        
+    }
+    
+     cout << endl;
+         
+        
+    
     
 }
-    
