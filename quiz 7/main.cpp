@@ -1,5 +1,9 @@
+
 #include "rectangle.hpp"
 #include "coordinate.hpp"
+#include <iostream>
+using namespace std;
+
 
 int main()
 {
@@ -9,8 +13,11 @@ int main()
 
     r1.printRectangle();
 
+    cout << endl;
+    
     lbval.setXY(-20.0, -20.0);
     rtval.setXY(20.0, 20.0);
     r1.setLBRT(lbval, rtval);
     r1.printRectangle();
 }
+

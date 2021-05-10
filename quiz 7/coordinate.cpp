@@ -2,7 +2,7 @@
 #include <iostream>
 using namespace std;
 
-
+Coordinate::Coordinate() {}
 Coordinate::Coordinate(double xval, double yval) 
     {setXY(xval,yval);}
 
@@ -17,5 +17,5 @@ void Coordinate::setXY(double xval, double yval){
     y = yval;
 }
 void Coordinate::printXY() const{
-    cout << "X-val: " << x << "/ Y-val: " << y << endl;
+    cout << "X-val: " << x << "  Y-val: " << y << endl;
 }
