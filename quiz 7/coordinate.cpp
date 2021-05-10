@@ -1,23 +1,21 @@
+#include "coordinate.hpp"
 #include <iostream>
 using namespace std;
 
-Coordinate::Coordinate(double xval,double yval){
-  setXY(xval, yval);
-}
 
-Coordinate::setXY(double xval, double yval) {
-  x = xval;
-  y = yval;
-}
+Coordinate::Coordinate(double xval, double yval) 
+    {setXY(xval,yval);}
 
-int Coordinate::getX()const{
-  return x;
+int Coordinate::getX() const{
+    return x;
 }
-
-int Coordinate::getY()const{
-  return y;
+int Coordinate::getY() const{
+    return y;
 }
-
-void Coordinate::printXY()const{
-  cout<<" X coordinate is :" << x << "Y coordinate is : " << y << endl;
+void Coordinate::setXY(double xval, double yval){
+    x = xval;
+    y = yval;
+}
+void Coordinate::printXY() const{
+    cout << "X-val: " << x << "/ Y-val: " << y << endl;
 }
