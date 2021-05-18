@@ -5,25 +5,39 @@
 using namespace std;
 
 
-void makearray(int []);
-void printarray(int []);
+void makearray(int [], int size);
+void printarray(int [], int size);
 
 
 
 int main()
 {
-  int arr[20]; 
-  int length; 
-  length = setArray(arr); 
-
-  sort(arr, length); 
-  print(arr, length); 
-  count(arr, length); 
+  srand(time(NULL));     //initializes randoms 
+  int size = rand() % 20;
+  int arr[size]; 
+  
+  makearray (arr,size);
+  int length = sizeof(arr)/sizeof(arr[0]); 
+  sort(arr, arr+length, greater<int>());
+  printarray(arr, size); 
+  //count(arr, length); 
 
 }
 
-void makearray(int num[])
+void makearray(int num[],int size)
 {
-    for(int i=0;i<6; i++)
-        num[i] = rand() % 50;
+  for (int i=0; i< size; i++){  
+    num[i] = rand() % 41 + (-20); 
+
+//   for(int i=0;i<6; i++)
+//         num[i] = rand() % 50;
+    }
+}
+
+void printarray(int num[],int size)
+{
+    for (int i=0; i < size; i++){
+      cout << num[i] << "\t";
+    }
+    cout << endl;
 }
