@@ -46,18 +46,18 @@ void printarray(int num[],int size)
 
 void count(int num[], int size)
 {
-int count = 0;
-
+  int count = 0, prevElm = 0;
   cout << "N" << "\t" << "Count" << endl;
-
-  for (int i = 0; i < size; i++){ 
-    for (int j =0; j < size; j++){
-        if ( num[i] == num[j] ){
-            count ++;
-            continue;
-        }
-    }
-    cout << num[i] << "\t" << count << endl;
+  for (int i=0; i<size; i++) {
+    if (prevElm == num[i])
+      continue;
+    
     count = 0;
+    for (int j=0; j<size; j++) {
+      if (num[i] == num[j])
+        count ++;
+    }
+  cout << num[i] << "\t" << count << endl;
+    prevElm = num[i];
   }
-  cout << endl;
+}
