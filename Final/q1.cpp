@@ -1,7 +1,7 @@
 #include <iostream>
 #include <ctime>
 #include  <cstdlib> 
- #include <algorithm>
+#include <algorithm>
 using namespace std;
 
 int getNumDiv(int []);
@@ -26,7 +26,7 @@ int main() {
 void makearray(int num[])
 {
     for(int i=0;i<6; i++)
-        num[i] = rand() % 100;
+        num[i] = rand() % 50;
 }
 
 
@@ -37,19 +37,34 @@ void printarray(int num[])
     cout << endl;
 }
 
-int getNumDiv(int numbers[]) {
-  
-  int count = 0, prevCount = 0, max = 0;
 
-  for (int i=0; i<6; i++) {
-    count = 0;
-    for (int j=2; j<numbers[i]; j++) {
-      if ((numbers[i] % j) == 0) {
-        count += 1;
+int getNumDiv(int a[])
+{
+  int max;  
+  int highestFactors = 0;  
+  int count; 
+
+  for (int i = 0; i < 6; i++)
+  {
+    count = 0; 
+    for (int j = 1; j < a[i]; j++)
+    {
+      if (a[i]%j == 0)
+      {
+        count++;  
+
       }
     }
-    if (count >= prevCount)
-      max = numbers[i];
+    cout << "num factors in element " << a[i] << " is " << count << endl;
+
+    
+    if (count > highestFactors)
+    {
+      highestFactors = count; 
+      max = a[i]; 
+
+    }
   }
-  return max;
-}
+
+  return max; 
+} 
