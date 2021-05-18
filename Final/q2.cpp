@@ -7,6 +7,7 @@ using namespace std;
 
 void makearray(int [], int size);
 void printarray(int [], int size);
+void count (int [], int size);
 
 
 
@@ -17,10 +18,11 @@ int main()
   int arr[size]; 
   
   makearray (arr,size);
-  int length = sizeof(arr)/sizeof(arr[0]); 
-  sort(arr, arr+length, greater<int>());
+
+  sort(arr, arr+size, greater<int>());
   printarray(arr, size); 
-  //count(arr, length); 
+  cout<< endl;
+  count(arr, size); 
 
 }
 
@@ -41,3 +43,21 @@ void printarray(int num[],int size)
     }
     cout << endl;
 }
+
+void count(int num[], int size)
+{
+int count = 0;
+
+  cout << "N" << "\t" << "Count" << endl;
+
+  for (int i = 0; i < size; i++){ 
+    for (int j =0; j < size; j++){
+        if ( num[i] == num[j] ){
+            count ++;
+            continue;
+        }
+    }
+    cout << num[i] << "\t" << count << endl;
+    count = 0;
+  }
+  cout << endl;
